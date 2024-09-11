@@ -4,66 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Website</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./Assets/css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <title>Home Page with Map and News Sections</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
 <body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./assets/images/logo-radius.jpg" alt="Logo">
+        </div>
+        <button class="toggle-button" id="toggle-button">&#9776;</button>
+        <ul class="nav-items" id="nav-items">
+            <li><a href="#">World</a></li>
+            <li><a href="#">Business</a></li>
+            <li><a href="#">Markets</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Legal</a></li>
+            <li><a href="#">Technology</a></li>
+            <li><a href="#">More</a></li>
+        </ul>
 
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#" class="nav__logo">Logo</a>
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">About Us</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Services</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Featured</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Contact Me</a></li>
-                </ul>
-                <div class="nav__close" id="nav-close"><i class="ri-close-line"></i></div>
+        <div class="nav-right">
+            <div class="language-selector">
+                <div class="language-logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/484/484633.png" alt="Language Logo" />
+                </div>
+                <select id="languageSelect">
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                    <option value="mr">Marathi</option>
+                </select>
             </div>
-            <div class="nav__actions">
-                <i class="ri-search-line nav__search" id="search-btn"></i>
-                <i class="ri-user-line nav__login" id="login-btn"></i>
-                <i class="ri-menu-line" id="nav-toggle"></i>
-            </div>
-        </nav>
-    </header>
 
-    <div class="container mt-5 pt-5 main-content">
-        <div class="row">
-            <div class="col-md-8 news-section">
-                <h2>Latest News</h2>
-                <div class="row" id="news-articles"></div>
-            </div>
-            <div class="col-md-4 map-container">
-                <h3>Location Map</h3>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3736.497981611288!2d78.58146571493098!3d21.27238568697517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd46a9377e67a61%3A0x89fd6d3c7f8c1fd4!2sKatol%2C%20Maharashtra%20441602%2C%20India!5e0!3m2!1sen!2sus!4v1693928542887!5m2!1sen!2sus"
-                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <input type="text" placeholder="Search">
+            <button class="sign-in">Sign In</button>
+            <button class="register">Register</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="news-section" id="news-section">
+            <!-- News Articles Here -->
+        </div>
+
+        <div class="map-section">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.6396342098144!2d78.58494857684524!3d21.269352484980038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd48c18b567c065%3A0x23984baf4c4db6e5!2sKatol%2C%20Maharashtra%20441402%2C%20India!5e0!3m2!1sen!2sus!4v1694454638703!5m2!1sen!2sus"
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <div class="country-names">
+                <h3>Country List</h3>
+                <div class="country">
+                    <h4>India</h4>
+                    <p>Known for its rich cultural heritage, India is one of the largest democracies in the world. <a
+                            href="#">See latest news</a></p>
+                </div>
+                <div class="country">
+                    <h4>United States</h4>
+                    <p>The US is a global leader in finance, culture, and technology. <a href="#">See latest news</a>
+                    </p>
+                </div>
+                <div class="country">
+                    <h4>Canada</h4>
+                    <p>Canada is known for its natural beauty, diverse cities, and strong human rights record. <a
+                            href="#">See latest news</a></p>
+                </div>
+                <div class="country">
+                    <h4>Germany</h4>
+                    <p>Germany is Europe's economic powerhouse and home to rich historical landmarks. <a href="#">See
+                            latest news</a></p>
+                </div>
+                <div class="country">
+                    <h4>Australia</h4>
+                    <p>Australia boasts stunning landscapes, a strong economy, and a vibrant multicultural society. <a
+                            href="#">See latest news</a></p>
+                </div>
             </div>
         </div>
     </div>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const toggleElements = [
-            { btn: "nav-toggle", el: "nav-menu", close: "nav-close", class: "show-menu" },
-            { btn: "search-btn", el: "search", close: "search-close", class: "show-search" },
-            { btn: "login-btn", el: "login", close: "login-close", class: "show-login" }
-        ];
-
-        toggleElements.forEach(({ btn, el, close, class: className }) => {
-            const element = document.getElementById(el),
-                closeButton = document.getElementById(close);
-
-            document.getElementById(btn).addEventListener("click", () => element.classList.add(className));
-            closeButton?.addEventListener("click", () => element.classList.remove(className));
-        });
-    </script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
